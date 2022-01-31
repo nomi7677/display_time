@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+button {
+  color: white;
+  background: #9b59b6;
+  border: 2px solid #ecf0f1;
+  border-radius: 10px;
+  text-transform: capitalize;
+  width: 110px;
+  height: 70px;
+  padding: 12px 20px;
+  cursor: pointer;
+}

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import "./App.css";
+import react, { useState } from "react";
 
 function App() {
+  let newTime = new Date().toLocaleTimeString();
+  const [currTime, setCurrTime] = useState(newTime);
+  let purple = "#8e44ad";
+  const [bg, setBg] = useState(purple);
+
+  const getNewTime = () => {
+    let newwTime = new Date().toLocaleTimeString();
+    setCurrTime(newwTime);
+  };
+  const dblClick = () => {
+    let col = "#00FF00";
+    setBg(col);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='App'>
+        <h3> {newTime} </h3>
+        <div style={{ backgroundColor: bg }}></div>
+        <button onClick={getNewTime} onDoubleClick={dblClick}>
+          Get new time
+        </button>
+      </div>
+    </>
   );
 }
 
